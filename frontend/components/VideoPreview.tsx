@@ -1,9 +1,11 @@
 
-import React, { useRef } from 'react';
-import { View, Text, TouchableOpacity, Image, Alert, ScrollView } from 'react-native';
+import React from 'react';
+import { View, Text, Image, Alert, ScrollView } from 'react-native';
 import { Video as ExpoVideo, ResizeMode } from 'expo-av';
 import { Video } from '../types';
 import { YoutubeIcon } from './icons/YoutubeIcon';
+import Button from './ui/Button';
+import { RefreshCwIcon } from './icons/RefreshCwIcon';
 
 interface VideoPreviewProps {
   video: Video;
@@ -11,8 +13,6 @@ interface VideoPreviewProps {
 }
 
 const VideoPreview: React.FC<VideoPreviewProps> = ({ video, onStartOver }) => {
-  const videoRef = useRef<ExpoVideo>(null);
-
   const handlePublish = () => {
     Alert.alert(
       "Publish to YouTube",
@@ -35,7 +35,6 @@ const VideoPreview: React.FC<VideoPreviewProps> = ({ video, onStartOver }) => {
         <View className="lg:flex-2">
             <View className="aspect-video w-full rounded-lg overflow-hidden bg-gray-800 border border-gray-700">
                 <ExpoVideo
-                    ref={videoRef}
                     source={{ uri: video.url }}
                     useNativeControls
                     resizeMode={ResizeMode.CONTAIN}
@@ -62,19 +61,22 @@ const VideoPreview: React.FC<VideoPreviewProps> = ({ video, onStartOver }) => {
       </View>
 
       <View className="flex-col sm:flex-row justify-end gap-4 pt-6 border-t border-gray-800">
-          <TouchableOpacity
-            onPress={onStartOver}
-            className="rounded-md bg-gray-700 px-4 py-3 items-center justify-center text-sm font-inter-semibold text-white shadow-sm hover:bg-gray-600 mb-4 sm:mb-0"
-          >
-            <Text className="text-white font-inter-semibold">Create New Video</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+          <View className="mb-4 sm:mb-0">
+            <Button
+              onPress={onStartOver}
+              variant="secondary"
+              Icon={RefreshCwIcon}
+            >
+              Create New Video
+            </Button>
+          </View>
+          <Button
             onPress={handlePublish}
-            className="flex-row items-center justify-center gap-x-2 rounded-md bg-red-600 px-4 py-3 text-sm font-inter-semibold text-white shadow-sm hover:bg-red-500"
+            variant="danger"
+            Icon={YoutubeIcon}
           >
-            <YoutubeIcon width={20} height={20} color="#fff" />
-            <Text className="text-white font-inter-semibold">Publish to YouTube</Text>
-          </TouchableOpacity>
+            Publish to YouTube
+          </Button>
       </View>
     </View>
   );

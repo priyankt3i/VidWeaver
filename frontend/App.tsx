@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { SafeAreaView, ScrollView, View, Text, StatusBar, ActivityIndicator, Alert } from 'react-native';
 import { Stage, Project, Script, Video, UploadedFile, ContentType } from './types';

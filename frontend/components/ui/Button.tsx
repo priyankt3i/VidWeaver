@@ -5,7 +5,7 @@ import { SvgProps } from 'react-native-svg';
 interface ButtonProps extends TouchableOpacityProps {
   isLoading?: boolean;
   loadingText?: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'danger';
   Icon?: React.FC<SvgProps>;
   children: React.ReactNode;
 }
@@ -13,6 +13,7 @@ interface ButtonProps extends TouchableOpacityProps {
 const variantStyles = {
   primary: 'bg-indigo-600 hover:bg-indigo-500',
   secondary: 'bg-gray-700 hover:bg-gray-600',
+  danger: 'bg-red-600 hover:bg-red-500',
 };
 
 const Button: React.FC<ButtonProps> = ({

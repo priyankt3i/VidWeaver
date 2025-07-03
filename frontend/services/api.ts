@@ -1,8 +1,10 @@
 import { UploadedFile, Project, Script, Video, ContentType } from '../types';
+//import { config } from '../config';
+import Constants from 'expo-constants';
 
 // The README specifies the backend runs on port 8000.
 // For native mobile, you might need to use your machine's local IP address instead of 'localhost'.
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = Constants.expoConfig?.extra?.apiBaseUrl; // config.apiBaseUrl;
 
 /**
  * A generic handler for API responses.

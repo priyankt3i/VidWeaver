@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
@@ -46,9 +45,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onProcess, isLoading }) => {
   };
   
   const handleProcessClick = () => {
-      if (projectName && files.length > 0) {
-          onProcess(projectName, files);
-      }
+    onProcess(projectName, files);
   };
 
   const isButtonDisabled = !projectName || files.length === 0 || isLoading;
@@ -116,7 +113,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onProcess, isLoading }) => {
             </>
           )}
         </TouchableOpacity>
-      </div>
+      </View>
     </View>
   );
 };

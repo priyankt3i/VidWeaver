@@ -1,8 +1,8 @@
 
 {
   "expo": {
-    "name": "AI Video Producer",
-    "slug": "ai-video-producer",
+    "name": "VidWeaver",
+    "slug": "vidweaver",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.aivideoproducer"
+      "bundleIdentifier": "com.anonymous.vidweaver"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#020617"
       },
-      "package": "com.anonymous.aivideoproducer"
+      "package": "com.anonymous.vidweaver"
     },
     "web": {
       "favicon": "./assets/favicon.png"
