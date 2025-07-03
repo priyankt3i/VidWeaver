@@ -29,7 +29,7 @@ graph TD
         C[Web Browser]
     end
 
-    subgraph Frontend (React Native + Expo)
+    subgraph Frontend (React Native & Expo)
         D[UI Components]
         E[State Management]
         F[API Service Layer]
