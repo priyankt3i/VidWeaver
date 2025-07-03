@@ -1,4 +1,4 @@
-# 🎬 AI Video Producer
+# 🎬 VidWeaver - AI Video Producer
 
 An application to transform a collection of documents into a fully produced YouTube video using AI. This app guides users through processing documents, generating a script, and producing a video with AI-powered narration and visuals, designed to run on iOS, Android, and the web.
 
